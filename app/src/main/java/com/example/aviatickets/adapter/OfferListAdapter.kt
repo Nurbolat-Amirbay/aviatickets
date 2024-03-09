@@ -10,16 +10,14 @@ import com.example.aviatickets.model.entity.Offer
 
 class OfferListAdapter : RecyclerView.Adapter<OfferListAdapter.ViewHolder>() {
 
-    private var items: List<Offer> = emptyList() // Change to List instead of ArrayList
+    private var items: List<Offer> = emptyList()
 
-    // Add a method to set items
     fun setItems(offerList: List<Offer>) {
         val diffResult = DiffUtil.calculateDiff(OfferDiffCallback(items, offerList))
         items = offerList
         diffResult.dispatchUpdatesTo(this)
     }
 
-    // Add a submitList method for updating data with DiffUtil
     fun submitList(newItems: List<Offer>) {
         val diffResult = DiffUtil.calculateDiff(OfferDiffCallback(items, newItems))
         items = newItems
@@ -88,7 +86,6 @@ class OfferListAdapter : RecyclerView.Adapter<OfferListAdapter.ViewHolder>() {
 
     }
 
-    // Define a class that implements DiffUtil.Callback
     private class OfferDiffCallback(
         private val oldList: List<Offer>,
         private val newList: List<Offer>

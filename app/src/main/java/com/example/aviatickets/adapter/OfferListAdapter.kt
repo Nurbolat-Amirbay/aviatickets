@@ -11,7 +11,7 @@ import com.example.aviatickets.model.entity.Offer
 class OfferListAdapter : RecyclerView.Adapter<OfferListAdapter.ViewHolder>() {
 
     private var items: List<Offer> = emptyList() // Change to List instead of ArrayList
-
+r
     // Add a method to set items
     fun setItems(offerList: List<Offer>) {
         val diffResult = DiffUtil.calculateDiff(OfferDiffCallback(items, offerList))

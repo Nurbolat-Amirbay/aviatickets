@@ -79,8 +79,7 @@ class OfferListAdapter : RecyclerView.Adapter<OfferListAdapter.ViewHolder>() {
                 price.text = context.getString(R.string.price_fmt, offer.price.toString())
 
                 Glide.with(context)
-                    .load(offer.flight.airline.imageUrl)
-                    .into(airlineImageView)
+                    .load("https://pics.avs.io/200/200/${flight.airline.code}.png")
             }
         }
 
